@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       
-      - name: matrix-21f4cdc
+      - name: matrix-21f6cdc
         run: echo "Building for version ${{ matrix.os }} with Python ${{ matrix.python-version }}"
       
       - name: Generate build artifact
@@ -33,5 +33,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: build-21f4cdc-${{ matrix.os }}-py${{ matrix.python-version }}
+          name: build-21f6cdc-${{ matrix.os }}-py${{ matrix.python-version }}
           path: output.txt
