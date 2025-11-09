@@ -5,6 +5,7 @@ This repository demonstrates a GitHub Actions workflow with multi-platform matri
 ## Matrix Configuration
 
 The workflow builds across multiple dimensions:
+
 - **Operating Systems**: Ubuntu (Linux), macOS, Windows
 - **Python Versions**: 3.10, 3.11
 
@@ -21,6 +22,7 @@ This creates **6 parallel jobs** (3 OS × 2 Python versions).
 ## Artifacts Generated
 
 Each matrix combination produces an artifact named:
+
 - `build-21f4cdc-ubuntu-latest-py3.10`
 - `build-21f4cdc-ubuntu-latest-py3.11`
 - `build-21f4cdc-macos-latest-py3.10`
@@ -31,6 +33,7 @@ Each matrix combination produces an artifact named:
 ## Validation
 
 The workflow meets all requirements:
+
 - ✅ At least 3 successful matrix jobs run
 - ✅ At least 3 artifacts uploaded with prefix `build-21f4cdc`
 - ✅ All artifacts contain actual content (non-empty)
@@ -39,4 +42,4 @@ The workflow meets all requirements:
 
 ## Contact
 
-Email: your-email@example.com
+Email: 23f2005444@ds.study.iitm.ac.in
