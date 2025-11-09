@@ -1,0 +1,37 @@
+name: Multi-Platform Matrix Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ['3.10', '3.11']
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      
+      - name: matrix-21f4cdc
+        run: echo "Building for version ${{ matrix.os }} with Python ${{ matrix.python-version }}"
+      
+      - name: Generate build artifact
+        run: echo "Build output for version ${{ matrix.os }} - Python ${{ matrix.python-version }}" > output.txt
+      
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-21f4cdc-${{ matrix.os }}-py${{ matrix.python-version }}
+          path: output.txt
